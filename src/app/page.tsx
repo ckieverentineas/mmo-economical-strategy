@@ -1,163 +1,26 @@
-import Image from 'next/image'
+// ./app/page.tsx
+
+import Auth from "./component/account/auth";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-row items-center justify-between p-24 flex-wrap">
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div><div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div><div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div><div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div><div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div><div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div><div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div><div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
-      <div className="border-r-8 bg-slate-700">Фигня1</div>
-      <div className="border-r-8 bg-slate-700">Фигня2</div>
-      <div className="border-r-8 bg-slate-700">Фигня3</div>
-      <div className="border-r-8 bg-slate-700">Фигня4</div>
-      <div className="border-r-8 bg-slate-700">Фигня5</div>
-      <div className="border-r-8 bg-slate-700">Фигня6</div>
+    <main className="flex flex-col items-center justify-between p-24">
+      <div className="text-black">
+        <h1>Альтернативная Федерация</h1>
+        <div>
+          <label>- Ноль уникальных рас, один мир, раскиданный по рандом</label>
+        </div>
+        <div>
+          <label>- Отнимание застроенных планет, переработка при добычи астероидов, расколка артефактов</label>
+        </div><div>
+          <label>- Пацифизм, никаких бомбардировок и уничтожения планет, управление боем оффлайн, антипиратство и никакого шпионажа с диверсиями</label>
+        </div><div>
+          <label>- Шаблонные проекты кораблей, без вариантов комплектации</label>
+        </div><div>
+          <label>- Опущенная экономика и отсутствие дипломатии, ограниченные уровни исследований вашим кошельком</label>
+        </div>
+        <Auth/>
+      </div>
     </main>
-  )
+  );
 }
