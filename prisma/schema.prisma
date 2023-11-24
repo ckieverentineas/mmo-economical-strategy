@@ -15,61 +15,30 @@ model User {
   email    String    @unique
   password String
   crdate   DateTime  @default(now())
+  update    DateTime @default(now())
   Account  Account[]
 }
 
-model User {
-  id             Int          @id @default(autoincrement())
-  idvk           Int
-  
-  
-  
-  iron           Float        @default(500)
-  crystal        Int          @default(0)
-  energy         Float        @default(1000)
-  research       Float        @default(0)
-  reputation     Float        @default(0)
-  status         String       @default("player")
-  limiter        Int          @default(0)
-  id_corporation Int          @default(0)
-  crdate         DateTime     @default(now())
-  update         DateTime     @default(now())
-  Bulder         Builder[]
-  Worker         Worker[]
-  Trigger        Trigger[]
-  Analyzer       Analyzer[]
-  Research       Research[]
-  Statistics     Statistics[]
-}
 model Account {
   id           Int            @id @default(autoincrement())
   name           String
   lvl            Int          @default(1)
   xp             Float        @default(0)
   gold           Float        @default(5000)
-
+  iron           Float        @default(500)
+  crystal        Int          @default(0)
+  energy         Float        @default(1000)
+  research       Float        @default(0)
+  reputation     Float        @default(0)
+  status         String       @default("player")
+  crdate       DateTime       @default(now())
+  update    DateTime @default(now())
+  id_corporation Int          @default(0)
   id_user      Int            @unique
-  crdate       DateTime       @default(now())
   user         User           @relation(fields: [id_user], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  Planet_Owner Planet_Owner[]
+  Research       Research[]
+  Statistics     Statistics[]
 }
-
-
-
-model Planet_Owner {
-  id           Int            @id @default(autoincrement())
-  name         String         @unique
-  id_planet    Int
-  id_account   Int
-  crdate       DateTime       @default(now())
-  account      Account        @relation(fields: [id_account], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  planet       Planet         @relation(fields: [id_planet], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  Planet_Block Planet_Block[]
-}
-
-
-
-
 
 model System {
   id     Int      @id @default(autoincrement())
@@ -91,13 +60,14 @@ model Planet {
   golden  Float
   crystal Float
 
-  build    Int   @default(7)
+  area    Int   @default(128)
   artefact Float
 
-  id_user   Int?
-  id_system Int
   crdate    DateTime @default(now())
   update    DateTime @default(now())
+  
+  id_user   Int?
+  id_system Int
   system    System   @relation(fields: [id_system], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
@@ -110,25 +80,10 @@ model Builder {
   storage String?
   output String?
   require String?
-  id_user    Int
   id_planet  Int?
+  id_user   Int?
   crdate     DateTime @default(now())
   update     DateTime @default(now())
-  user       User     @relation(fields: [id_user], references: [id], onDelete: Cascade, onUpdate: Cascade)
-}
-
-model Corporation_Builder {
-  id             Int         @id @default(autoincrement())
-  name           String
-  lvl            Int         @default(1)
-  type           String
-  income         Float       @default(1)
-  cost           Float       @default(100)
-  worker         Int         @default(1)
-  id_corporation Int
-  crdate         DateTime    @default(now())
-  update         DateTime    @default(now())
-  corporation    Corporation @relation(fields: [id_corporation], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Worker {
@@ -136,18 +91,19 @@ model Worker {
   name       String
   lvl        Int      @default(1)
   xp         Float    @default(0)
-  income     Float    @default(0)
+  atk     Float    @default(1)
+  def Float @default(2)
+  hp Float @default(5)
   speed      Float    @default(1)
   salary     Float    @default(1)
   gold       Float    @default(0)
   reputation Float    @default(0)
   point      Int      @default(0)
-  id_user    Int
   id_builder Int?
   id_planet  Int?
+  id_user   Int?
   crdate     DateTime @default(now())
   update     DateTime @default(now())
-  user       User     @relation(fields: [id_user], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Corporation {
@@ -164,36 +120,25 @@ model Corporation {
   update              DateTime              @default(now())
   Corporation_Builder Corporation_Builder[]
 }
-
-model Trigger {
-  id      Int      @id @default(autoincrement())
-  name    String
-  value   Boolean  @default(false)
-  user    User     @relation(fields: [id_user], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  id_user Int
-  crdate  DateTime @default(now())
-  update  DateTime @default(now())
+model Corporation_Builder {
+  id             Int         @id @default(autoincrement())
+  name           String
+  lvl            Int         @default(1)
+  type           String
+  income         Float       @default(1)
+  cost           Float       @default(100)
+  worker         Int         @default(1)
+  id_corporation Int
+  crdate         DateTime    @default(now())
+  update         DateTime    @default(now())
+  corporation    Corporation @relation(fields: [id_corporation], references: [id], onDelete: Cascade, onUpdate: Cascade)
 }
-
-model Analyzer {
-  id        Int      @id @default(autoincrement())
-  energy    Float    @default(0)
-  gold      Float    @default(0)
-  gold_from Float    @default(0)
-  gold_to   Float    @default(0)
-  xp        Float    @default(0)
-  point     Int      @default(0)
-  user      User     @relation(fields: [id_user], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  id_user   Int
-  crdate    DateTime @default(now())
-}
-
 model Research {
   id      Int      @id @default(autoincrement())
   name    String
   lvl     Int
-  user    User     @relation(fields: [id_user], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  id_user Int
+  account    Account     @relation(fields: [id_account], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  id_account Int
   crdate  DateTime @default(now())
   update  DateTime @default(now())
 }
@@ -204,22 +149,8 @@ model Statistics {
   day     String
   week    String
   month   String
-  user    User     @relation(fields: [id_user], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  id_user Int
-  crdate  DateTime @default(now())
-  update  DateTime @default(now())
-}
-
-model Boss {
-  id  Int      @id @default(autoincrement())
-  id_post Int
-  name String
-  description String
-  hp Float
-  artefact Float
-  crystal Float
-  stat String @default("[]")
-  defeat Boolean @default(false)
+  account    Account     @relation(fields: [id_account], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  id_account Int
   crdate  DateTime @default(now())
   update  DateTime @default(now())
 }
