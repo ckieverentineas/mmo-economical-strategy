@@ -28,7 +28,7 @@ export default function Auth() {
         console.log(result)
     }
     return (
-        <div >
+        <div className=''>
             <div>{answer}</div>
             <form onSubmit={handleSubmit}>
                 <div>
