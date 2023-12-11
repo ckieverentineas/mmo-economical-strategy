@@ -24,7 +24,7 @@ export default function Auth() {
         if (Object.keys(result).length > 1) {
             localStorage.removeItem('session')
             localStorage.setItem('session', `${result['token']}`)
-            //router.push('/view/account')
+            router.push('/account')
         }
         console.log(result)
     }
