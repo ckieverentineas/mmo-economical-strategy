@@ -13,27 +13,27 @@ export default function Auth() {
     };
     const router = useRouter()
     async function Register_User() {
-        const res = await fetch('/api/account/auth', {
+        const res = await fetch('/api/user', {
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
             method: 'POST'
         })
+        console.log(res)
         const result = await res.json()
         setAnswer(result['status'])
         if (Object.keys(result).length > 1) {
             localStorage.removeItem('session')
             localStorage.setItem('session', `${result['token']}`)
-            router.push('/view/account')
+            //router.push('/view/account')
         }
         console.log(result)
     }
     return (
         <div className=''>
-            <div>{answer}</div>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email">Email:</label><br/>
-                    <input
+                    <input className='border-4'
                         id="email"
                         type="email"
                         onChange={e => setEmail(e.target.value)}
@@ -41,7 +41,7 @@ export default function Auth() {
                 </div>
                 <div>
                     <label htmlFor="password">Password:</label><br/>
-                    <input
+                    <input className='border-4'
                         id="password"
                         type="password"
                         onChange={e => setPassword(e.target.value)}
@@ -49,6 +49,7 @@ export default function Auth() {
                 </div>
                 <button type="submit">Логин</button>
             </form>
+            <div>{answer}</div>
         </div>
     );
 }
