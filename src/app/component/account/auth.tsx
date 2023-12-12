@@ -1,6 +1,6 @@
 "use client"
-import { useState } from 'react'
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 export default function Auth() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -13,7 +13,7 @@ export default function Auth() {
     };
     const router = useRouter()
     async function Register_User() {
-        const res = await fetch('/api/user', {
+        const res = await fetch('/api/user/auth', {
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
             method: 'POST'
