@@ -29,7 +29,7 @@ export default function Auth() {
         console.log(result)
     }
     return (
-        <div className=''>
+        <div className='border-r-8'>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email">Email:</label><br/>
